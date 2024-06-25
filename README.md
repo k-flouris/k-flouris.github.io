@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url('images/dark.jpg');
+  background-size: cover;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #FFD700; /* Gold color for headers */
+}
+a {
+  color: #00BFFF; /* Deep sky blue color for links */
+}
+</style>
+</head>
+<body>
+
+
+
 # Kyriakos Flouris 
 
 
@@ -81,3 +103,6 @@
 - Football and Running
 - 
 ![Profile Image](images/manifold_and_density.png)
+
+</body>
+</html>
