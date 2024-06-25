@@ -79,3 +79,5 @@
 - Skiing and Mountain Biking
 - Design and Technology
 - Football and Running
+- 
+![Profile Image](images/manifold_and_density.png)
