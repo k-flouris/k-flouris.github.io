@@ -1,6 +1,5 @@
 # Kyriakos Flouris
 
-![Banner Image](images/dark.jpg)
 
 Welcome to my GitHub page! I am a Senior Research Scientist at the [Computer Vision Lab, ETH Zürich](https://vision.ee.ethz.ch/), specializing in the intersection of AI, theoretical physics, and differential geometry. My work focuses on developing and applying advanced machine learning methods to medical imaging, particularly computed tomography (CT).
 
@@ -19,6 +18,9 @@ Welcome to my GitHub page! I am a Senior Research Scientist at the [Computer Vis
 - Differential Geometry and Theoretical Physics
 - Fluid Structure Interaction and Lattice Boltzmann Methods
 - Geometrical and Topological Condensed Matter Physics
+
+![Banner Image](images/dark.jpg)
+
 
 ## Education
 
