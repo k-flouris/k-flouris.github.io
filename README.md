@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body {
-  background-image: url('images/dark.jpg');
-  background-size: cover;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-h1, h2, h3, h4, h5, h6 {
-  color: #FFD700; /* Gold color for headers */
-}
-a {
-  color: #00BFFF; /* Deep sky blue color for links */
-}
-</style>
-</head>
-<body>
+# Kyriakos Flouris
 
+![Banner Image](images/dark.jpg)
 
-
-# Kyriakos Flouris 
-
-
-- Computational and Theoretical Physicist - Welcome to my GitHub page! I am a Senior Research Scientist at the [Computer Vision Lab, ETH Zürich](https://vision.ee.ethz.ch/), specializing in the intersection of AI, theoretical physics, and differential geometry. My work focuses on developing and applying advanced machine learning methods to medical imaging, particularly computed tomography (CT).
+Welcome to my GitHub page! I am a Senior Research Scientist at the [Computer Vision Lab, ETH Zürich](https://vision.ee.ethz.ch/), specializing in the intersection of AI, theoretical physics, and differential geometry. My work focuses on developing and applying advanced machine learning methods to medical imaging, particularly computed tomography (CT).
 
 ## About Me
 
@@ -101,8 +80,9 @@ a {
 - Skiing and Mountain Biking
 - Design and Technology
 - Football and Running
-- 
+
 ![Profile Image](images/manifold_and_density.png)
 
-</body>
-</html>
+Thank you for visiting!
+
+Kyriakos Flouris
