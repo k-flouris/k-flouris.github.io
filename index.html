@@ -14,18 +14,23 @@
             padding: 20px;
             line-height: 1.6;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+        nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
             background-color: rgba(0, 0, 0, 0.9);
-            margin: 0;
-        }
-        nav li {
             padding: 10px;
         }
-        nav a {
+        .nav-links, .nav-contact {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links li, .nav-contact li {
+            margin: 0 10px;
+        }
+        .nav-links a, .nav-contact a {
             color: #FFD700; /* Gold color for links in the nav */
             text-decoration: none;
             font-weight: bold;
@@ -56,9 +61,13 @@
             .content {
                 padding: 10px;
             }
-            nav ul {
+            nav {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+            }
+            .nav-links, .nav-contact {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
         body.loaded .content {
@@ -68,7 +77,7 @@
 </head>
 <body>
     <nav>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#about">About Me</a></li>
             <li><a href="#research">Research Interests</a></li>
             <li><a href="#education">Education</a></li>
@@ -78,11 +87,15 @@
             <li><a href="#awards">Awards</a></li>
             <li><a href="#interests">Personal Interests</a></li>
         </ul>
+        <ul class="nav-contact">
+            <li><a href="https://www.linkedin.com/in/kyriakosflouris123/">LinkedIn</a></li>
+            <li><a href="mailto:kyriakos.flouris@vision.ee.ethz.ch">Email</a></li>
+        </ul>
     </nav>
     <div class="content" id="about">
         <h1>Kyriakos Flouris</h1>
         <p><em>Decoding the Universe with Code, Curved Spaces, and Quantum Ideas</em></p>
-        <p>Welcome to my digital portfolio! Im a Senior Research Scientist at the <a href="https://vision.ee.ethz.ch/">Computer Vision Lab, ETH Zurich</a>, where I merge the realms of Artificial Intelligence, medical imaging, and theoretical physics. From developing novel generative models to exploring the mysteries of quantum physics and fluid dynamics, my work is driven by a fascination with the intersection of technology and nature. If you enjoy thinking about how AI can shape our understanding of the world, youâ€™re in the right place.</p>
+        <p>Welcome to my digital portfolio! Iâ€™m a Senior Research Scientist at the <a href="https://vision.ee.ethz.ch/">Computer Vision Lab, ETH Zurich</a>, where I merge the realms of Artificial Intelligence, medical imaging, and theoretical physics. From developing novel generative models to exploring the mysteries of quantum physics and fluid dynamics, my work is driven by a fascination with the intersection of technology and nature. If you enjoy thinking about how AI can shape our understanding of the world, youâ€™re in the right place.</p>
 
         <h2 id="research">Research Interests</h2>
         <ul>
