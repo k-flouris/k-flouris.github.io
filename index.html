@@ -6,20 +6,55 @@
     <meta name="description" content="Kyriakos Flouris - Biostatistics, AI, Medical, Computational and Theoretical Physicist specializing in Generative Modeling,  Medical Imaging, and Differential Geometry.">
     <title>Kyriakos Flouris - AI, Medical, Computational and Theoretical Physicist</title>
     <style>
+        /* --- Global Reset & Typography --- */
         body {
-            background-image: url('images/dark.jpg');
-            background-size: cover;
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6; /* Light gray background */
+            color: #333; /* Dark gray text for readability */
+            line-height: 1.7;
+            font-size: 1.1em;
         }
+
+        /* --- Links --- */
+        a {
+            color: #0056b3; /* Professional blue for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Headings --- */
+        h1, h2, h3, h4, h5, h6 {
+            color: #222; /* Darker headers */
+            margin-top: 1.5em;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #eee; /* Separator for sections */
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        /* --- Navigation Bar --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 15px 30px;
+            border-bottom: 1px solid #ddd;
+            /* "Pro" sticky nav */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
         .nav-links, .nav-contact {
             display: flex;
@@ -28,50 +63,85 @@
             margin: 0;
         }
         .nav-links li, .nav-contact li {
-            margin: 0 10px;
+            margin: 0 12px;
         }
         .nav-links a, .nav-contact a {
-            color: #FFD700; /* Gold color for links in the nav */
+            color: #0056b3;
             text-decoration: none;
             font-weight: bold;
+            padding: 8px 4px;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
         }
-        h1, h2, h3, h4, h5, h6 {
-            color: #FFD700; /* Gold color for headers */
+        .nav-links a:hover, .nav-contact a:hover {
+            color: #003d82; /* Darker blue on hover */
+            border-bottom-color: #0056b3;
+            text-decoration: none;
         }
-        a {
-            color: #00BFFF; /* Deep sky blue color for links */
-        }
+
+        /* --- Main Content Area --- */
         .content {
             max-width: 800px;
-            margin: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 1.1em;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            margin: 40px auto; /* Centered with top/bottom margin */
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* "Card" effect */
         }
+
+        /* --- Content Lists --- */
+        .content ul {
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin-bottom: 10px;
+        }
+        .content ul li ul {
+            margin-top: 10px; /* Space for nested lists */
+        }
+        
+        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
+            padding: 30px;
+            background-color: #333; /* Dark footer */
+            color: #aaa; /* Light text on dark background */
+            margin-top: 40px;
         }
-        @media (max-width: 600px) {
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer div {
+            margin-top: 15px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
             .content {
-                padding: 10px;
+                padding: 20px;
+                margin: 20px auto;
             }
             nav {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center; /* Center nav items on mobile */
+                padding: 15px;
             }
             .nav-links, .nav-contact {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                width: 100%;
             }
-        }
-        body.loaded .content {
-            opacity: 1;
+            .nav-links li, .nav-contact li {
+                margin: 8px 0;
+            }
+            .nav-contact {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -186,22 +256,17 @@
             <li>Football and Running</li>
         </ul>
 
-        <img src="images/manifold_and_density.png" alt="Profile Image of Manifold and Density Plot" style="width:100%; max-width:600px; display:block; margin:auto;"/>
+        <img src="images/manifold_and_density.png" alt="Profile Image of Manifold and Density Plot" style="width:100%; max-width:600px; display:block; margin:auto; border-radius: 4px; margin-top: 20px;"/>
 
-        <p>Thank you for visiting!</p>
-        <p>Kyriakos Flouris</p>
+        <p style="text-align: center; margin-top: 30px;">Thank you for visiting!</p>
+        <p style="text-align: center; font-weight: bold; font-size: 1.2em;">Kyriakos Flouris</p>
     </div>
     <footer>
         <p>&copy; 2024 Kyriakos Flouris. All Rights Reserved.</p>
         <div>
-            <a href="https://www.linkedin.com/in/kyriakosflouris123/" style="color:#00BFFF; margin-right:10px;">LinkedIn</a>
-            <a href="mailto:kyriakos.flouris@gmail.com" style="color:#00BFFF;">Email</a>
+            <a href="https://www.linkedin.com/in/kyriakosflouris123/">LinkedIn</a>
+            <a href="mailto:kyriakos.flouris@gmail.com">Email</a>
         </div>
     </footer>
-    <script>
-        window.onload = function() {
-            document.body.classList.add('loaded');
-        }
-    </script>
 </body>
 </html>
