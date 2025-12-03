@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kyriakos Flouris - Biostatistics, AI, Medical, Computational and Theoretical Physicist specializing in Generative Modeling,  Medical Imaging, and Differential Geometry.">
+    <meta name="description" content="Kyriakos Flouris - Biostatistics, AI, Medical, Computational and Theoretical Physicist specializing in Generative Modeling, Medical Imaging, and Differential Geometry.">
     <title>Kyriakos Flouris - AI, Medical, Computational and Theoretical Physicist</title>
     <style>
         /* --- Global Reset & Typography --- */
@@ -94,10 +94,34 @@
             padding-left: 20px;
         }
         .content ul li {
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Increased slightly for bibtex spacing */
         }
         .content ul li ul {
             margin-top: 10px; /* Space for nested lists */
+        }
+
+        /* --- BibTeX Styling --- */
+        details {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #555;
+            cursor: pointer;
+        }
+        summary {
+            font-weight: 500;
+            color: #0056b3;
+            outline: none;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-size: 0.85em;
+            font-family: Consolas, Monaco, "Andale Mono", monospace;
+            margin-top: 5px;
         }
         
         /* --- Footer --- */
@@ -111,163 +135,4 @@
         footer a {
             color: #ffffff;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        footer div {
-            margin-top: 15px;
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .content {
-                padding: 20px;
-                margin: 20px auto;
-            }
-            nav {
-                flex-direction: column;
-                align-items: center; /* Center nav items on mobile */
-                padding: 15px;
-            }
-            .nav-links, .nav-contact {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .nav-links li, .nav-contact li {
-                margin: 8px 0;
-            }
-            .nav-contact {
-                margin-top: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#research">Research Interests</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Professional Experience</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#interests">Personal Interests</a></li>
-        </ul>
-        <ul class="nav-contact">
-            <li><a href="https://www.linkedin.com/in/kyriakosflouris123/">LinkedIn</a></li>
-            <li><a href="mailto:kf318@cam.ac.uk">Email</a></li>
-        </ul>
-    </nav>
-    <div class="content" id="about">
-        <h1>Kyriakos Flouris</h1>
-        <p><em>Decoding the Universe with Code, Curved Spaces, and Quantum Ideas</em></p>
-        <p>Welcome to my digital portfolio! I am a Group Leader for Biomedical Machine Learning at the <a href="https://www.mrc-bsu.cam.ac.uk/">Biostatistics Unit, University of Cambridge </a>, where I merge the realms of Artificial Intelligence, biostitistics, medical imaging, and theoretical physics. From developing novel generative models to exploring the mysteries of quantum physics and fluid dynamics, my work is driven by a fascination with the intersection of technology and nature. If you enjoy thinking about how AI can shape our understanding of the world, you are in the right place.</p>
-
-        <h2 id="research">Research Interests</h2>
-        <ul>
-            <li>Spatio-Temporal dynamics for forecasting</li>
-            <li>Medical Imaging (Computed Tomography, Radiomics, Super-Resolution ...)</li>
-            <li>Biostatistics (Genomics, Epidemiology ...)</li>
-            <li>Generative Modeling and AI (Gradient flows, Normalizing Flows, Variational Autoencoders, Diffusion Models)</li>
-            <li>Differential Geometry and Theoretical Physics</li>
-            <li>Fluid Structure Interaction and Lattice Boltzmann Methods</li>
-            <li>Quantum Machine Learning</li>
-        </ul>
-
-        <h2 id="education">Education</h2>
-        <ul>
-            <li><strong>Doctor of Sciences, ETH Zurich</strong> (2015-2019)
-                <ul>
-                    <li>Thesis: Flow and Dirac Particles on Curved and Topological Manifolds</li>
-                    <li>Developed lattice Boltzmann and Dirac equation solvers for fluid-structure interactions and quantum systems</li>
-                </ul>
-            </li>
-            <li><strong>Master of Science, University of Cambridge</strong> (2013-2014)
-                <ul>
-                    <li>Part III of Physical NatSci Tripos - First Class (70.0% GPA)</li>
-                    <li>Courses in Particle Physics, Relativistic Cosmology, Gauge Field Theory, and Non-Linear Optics</li>
-                </ul>
-            </li>
-            <li><strong>Bachelor of Science, University of Cambridge</strong> (2010-2013)
-                <ul>
-                    <li>Experimental and Theoretical Physics (2.1 - 67.5% GPA)</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h2 id="experience">Professional Experience</h2>
-        <ul>
-            <li><strong>Senior Research Scientist, Computer Vision Lab, ETH Zurich</strong> (2019-present)
-                <ul>
-                    <li>Developing and applying deep learning techniques in medical imaging</li>
-                    <li>Leading projects on generative modeling, CT radiomics, and MRI super-resolution</li>
-                    <li>Exploring quantum-inspired machine learning algorithms and neural PDE solvers</li>
-                    <li>Supervising MSc and PhD research projects, and teaching at summer schools</li>
-                </ul>
-            </li>
-            <li><strong>Research Assistant, Computational Physics for Engineering Materials, ETH Zurich</strong> (2015-2019)
-                <ul>
-                    <li>Developed fluid structure interaction models with lattice Boltzmann methods</li>
-                    <li>Researched Dirac fermions and topological matter</li>
-                    <li>Teaching assistant in Python programming and computational methods</li>
-                </ul>
-            </li>
-            <li><strong>Research Assistant, Institute of Astronomy, ETH Zurich</strong> (2014-2015)
-                <ul>
-                    <li>Part of the MUSE project at the Very Large Telescope (VLT)</li>
-                    <li>Developed algorithms for data reduction and analysis</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h2 id="publications">Selected Publications</h2>
-        <ul>
-            <li><a href="https://arxiv.org/abs/2310.12743">"Canonical Normalizing Flows for Manifold Learning", NeurIPS, 2023</a></li>
-            <li><a href="https://arxiv.org/abs/2304.05939">"Explicitly Minimizing the Blur Error of Variational Autoencoders", ICLR, 2023</a></li>
-            <li><a href="https://doi.org/10.1103/PhysRevB.105.235122">"Curvature-Induced Quantum Spin-Hall Effect on a MÃ¶bius Strip", Physical Review B, 2022</a></li>
-            <li><a href="https://www.nature.com/articles/s41598-022-08301-1">"Assessing Radiomics Feature Stability with Simulated CT Acquisitions", Scientific Reports, 2022</a></li>
-            <li><a href="https://arxiv.org/abs/2406.17441">"A Matrix Product State Model for Simultaneous Classification and Generation", Quantum Machine Intelligence, 2024</a></li>
-        </ul>
-
-        <h2 id="skills">Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Python, C++, MATLAB, Mathematica, LaTeX, Unix, GitHub</li>
-            <li><strong>Tools and Frameworks:</strong> PyTorch, Deep Learning, Generative Modeling, Lattice Boltzmann Methods</li>
-            <li><strong>Research Skills:</strong> Data Acquisition and Analysis, Theoretical Research, Teaching</li>
-        </ul>
-
-        <h2 id="awards">Awards and Honors</h2>
-        <ul>
-            <li>Top Reviewer Neurips 2025</li>
-            <li>Master of Science, First Class Grade, University of Cambridge</li>
-            <li>PHRT Funding, ETH Zurich - Radiomics and DeepFlow Projects</li>
-            <li>Highest International Mark in Physics (GCE A-Level), Edexcel</li>
-        </ul>
-
-        <h2 id="interests">Personal Interests</h2>
-        <ul>
-            <li>AI and Numerics</li>
-            <li>Theoretical Physics</li>
-            <li>Skiing and Mountain Biking</li>
-            <li>Design and Technology</li>
-            <li>Football and Running</li>
-        </ul>
-
-        <img src="images/manifold_and_density.png" alt="Profile Image of Manifold and Density Plot" style="width:100%; max-width:600px; display:block; margin:auto; border-radius: 4px; margin-top: 20px;"/>
-
-        <p style="text-align: center; margin-top: 30px;">Thank you for visiting!</p>
-        <p style="text-align: center; font-weight: bold; font-size: 1.2em;">Kyriakos Flouris</p>
-    </div>
-    <footer>
-        <p>&copy; 2024 Kyriakos Flouris. All Rights Reserved.</p>
-        <div>
-            <a href="https://www.linkedin.com/in/kyriakosflouris123/">LinkedIn</a>
-            <a href="mailto:kyriakos.flouris@gmail.com">Email</a>
-        </div>
-    </footer>
-</body>
-</html>
+            margin: 0 10
