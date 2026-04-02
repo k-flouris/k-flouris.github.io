@@ -1,601 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kyriakos Flouris - Biostatistics, AI, Medical, Computational and Theoretical Physicist specializing in Generative Modeling, Medical Imaging, and Differential Geometry.">
-    <title>Kyriakos Flouris - AI, Medical, Computational and Theoretical Physicist</title>
-    <style>
-        /* --- Global Reset & Typography --- */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6; /* Light gray background */
-            color: #333; /* Dark gray text for readability */
-            line-height: 1.7;
-            font-size: 1.1em;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kyriakos Flouris – Group Leader for Biomedical Machine Learning, MRC Biostatistics Unit, University of Cambridge.">
+  <title>Kyriakos Flouris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --link: #2a5caa;
+      --link-hover: #1a3d7a;
+      --text: #222;
+      --muted: #555;
+      --border: #dde2ea;
+      --bg: #f7f8fb;
+      --white: #ffffff;
+      --sidebar-width: 220px;
+    }
 
-        /* --- Links --- */
-        a {
-            color: #0056b3; /* Professional blue for links */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* --- Headings --- */
-        h1, h2, h3, h4, h5, h6 {
-            color: #222; /* Darker headers */
-            margin-top: 1.5em;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-top: 0;
-        }
-        h2 {
-            font-size: 1.8em;
-            border-bottom: 2px solid #eee; /* Separator for sections */
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
 
-        /* --- Navigation Bar --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 15px 30px;
-            border-bottom: 1px solid #ddd;
-            /* "Pro" sticky nav */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        .nav-links, .nav-contact {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .nav-links li, .nav-contact li {
-            margin: 0 12px;
-        }
-        .nav-links a, .nav-contact a {
-            color: #0056b3;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 4px;
-            border-bottom: 3px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
-        }
-        .nav-links a:hover, .nav-contact a:hover {
-            color: #003d82; /* Darker blue on hover */
-            border-bottom-color: #0056b3;
-            text-decoration: none;
-        }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
 
-        /* --- Main Content Area --- */
-        .content {
-            max-width: 800px;
-            margin: 40px auto; /* Centered with top/bottom margin */
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* "Card" effect */
-        }
+    /* ── TOP NAV ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 24px;
+      height: 52px;
+    }
+    .nav-name {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--navy);
+      margin-right: 28px;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .nav-name:hover { text-decoration: none; color: var(--link); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      display: block;
+      padding: 6px 11px;
+      font-size: 13.5px;
+      color: var(--muted);
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: #edf1f9;
+      color: var(--navy);
+      text-decoration: none;
+    }
 
-        /* --- Content Lists --- */
-        .content ul {
-            padding-left: 20px;
-        }
-        .content ul li {
-            margin-bottom: 15px; /* Increased slightly for bibtex spacing */
-        }
-        .content ul li ul {
-            margin-top: 10px; /* Space for nested lists */
-        }
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 960px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      gap: 48px;
+      align-items: start;
+    }
 
-        /* --- BibTeX Styling --- */
-        details {
-            margin-top: 5px;
-            font-size: 0.9em;
-            color: #555;
-            cursor: pointer;
-        }
-        summary {
-            font-weight: 500;
-            color: #0056b3;
-            outline: none;
-        }
-        pre {
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #eee;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            font-size: 0.85em;
-            font-family: Consolas, Monaco, "Andale Mono", monospace;
-            margin-top: 5px;
-        }
-        
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #333; /* Dark footer */
-            color: #aaa; /* Light text on dark background */
-            margin-top: 40px;
-        }
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        footer div {
-            margin-top: 15px;
-        }
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 72px;
+    }
+    .sidebar img {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+    .sidebar .name {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .sidebar .title {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .sidebar .affil {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+    .sidebar .affil span { display: block; }
+    .sidebar-links {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sidebar-links a {
+      font-size: 13px;
+      color: var(--link);
+    }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .content {
-                padding: 20px;
-                margin: 20px auto;
-            }
-            nav {
-                flex-direction: column;
-                align-items: center; /* Center nav items on mobile */
-                padding: 15px;
-            }
-            .nav-links, .nav-contact {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .nav-links li, .nav-contact li {
-                margin: 8px 0;
-            }
-            .nav-contact {
-                margin-top: 10px;
-            }
-        }
-    </style>
+    /* ── MAIN CONTENT ── */
+    main h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    main h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 36px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    main h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 24px 0 8px;
+    }
+    main p { margin-bottom: 14px; }
+    main ul { padding-left: 0; list-style: none; }
+    main ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #edf0f5;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    main ul li:last-child { border-bottom: none; }
+    main ul li em { color: var(--muted); }
+    main ul li strong { color: var(--text); }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-right: 4px;
+      letter-spacing: 0.03em;
+    }
+    .tag-talk { background: #dceeff; color: #1a5296; }
+    .tag-poster { background: #e8f5e9; color: #2e7d32; }
+    .tag-lecture { background: #fff3e0; color: #e65100; }
+    .tag-course { background: #f3e5f5; color: #6a1b9a; }
+    .tag-supervision { background: #e0f2f1; color: #004d40; }
+
+    .year-label {
+      font-family: 'Source Serif 4', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 28px 0 6px;
+    }
+
+    .pub-authors { color: var(--muted); font-size: 13.5px; }
+    .pub-venue { font-style: italic; color: var(--muted); font-size: 13.5px; }
+
+    details { margin-top: 4px; }
+    summary {
+      cursor: pointer;
+      font-size: 12.5px;
+      color: var(--link);
+      font-weight: 600;
+      outline: none;
+      display: inline;
+    }
+    pre {
+      background: #f0f3f8;
+      padding: 10px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-size: 11.5px;
+      font-family: 'Courier New', monospace;
+      margin-top: 6px;
+      color: #333;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .page { grid-template-columns: 1fr; gap: 24px; }
+      .sidebar { position: static; }
+      .sidebar img { max-width: 160px; }
+      nav { height: auto; flex-wrap: wrap; padding: 10px 16px; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#interests">Interests</a></li>
-        </ul>
-        <ul class="nav-contact">
-            <li><a href="https://www.linkedin.com/in/kyriakosflouris123/">LinkedIn</a></li>
-            <li><a href="mailto:kf318@cam.ac.uk">Email</a></li>
-        </ul>
-    </nav>
-    <div class="content" id="about">
-        <h1>Kyriakos Flouris</h1>
-        <p><em>Decoding the Universe with Code, Curved Spaces, and Quantum Ideas</em></p>
-        <p>Welcome to my digital portfolio! I am a Group Leader for Biomedical Machine Learning at the <a href="https://www.mrc-bsu.cam.ac.uk/">Biostatistics Unit, University of Cambridge</a>, where I merge the realms of Artificial Intelligence, biostatistics, medical imaging, and theoretical physics. From developing novel generative models to exploring the mysteries of quantum physics and fluid dynamics, my work is driven by a fascination with the intersection of technology and nature. If you enjoy thinking about how AI can shape our understanding of the world, you are in the right place.</p>
 
-        <h2 id="research">Research Interests</h2>
-        <ul>
-            <li>Spatio-Temporal dynamics for forecasting</li>
-            <li>Medical Imaging (Computed Tomography, Radiomics, Super-Resolution)</li>
-            <li>Biostatistics (Genomics, Epidemiology)</li>
-            <li>Generative Modeling and AI (Gradient flows, Normalizing Flows, Variational Autoencoders, Diffusion Models)</li>
-            <li>Differential Geometry and Theoretical Physics</li>
-            <li>Fluid Structure Interaction and Lattice Boltzmann Methods</li>
-            <li>Quantum Machine Learning</li>
-        </ul>
+<header>
+  <nav>
+    <a class="nav-name" href="#about">Kyriakos Flouris</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <h2 id="education">Education</h2>
-        <ul>
-            <li><strong>Doctor of Sciences, ETH Zurich</strong> (2015-2019)
-                <ul>
-                    <li>Thesis: Flow and Dirac Particles on Curved and Topological Manifolds</li>
-                    <li>Developed lattice Boltzmann and Dirac equation solvers for fluid-structure interactions and quantum systems</li>
-                </ul>
-            </li>
-            <li><strong>Master of Science, University of Cambridge</strong> (2013-2014)
-                <ul>
-                    <li>Part III of Physical NatSci Tripos - First Class (70.0% GPA)</li>
-                    <li>Courses in Particle Physics, Relativistic Cosmology, Gauge Field Theory, and Non-Linear Optics</li>
-                </ul>
-            </li>
-            <li><strong>Bachelor of Science, University of Cambridge</strong> (2010-2013)
-                <ul>
-                    <li>Experimental and Theoretical Physics (2.1 - 67.5% GPA)</li>
-                </ul>
-            </li>
-        </ul>
+<div class="page">
 
-        <h2 id="experience">Professional Experience</h2>
-        <ul>
-            <li><strong>Senior Research Scientist, Computer Vision Lab, ETH Zurich</strong> (2019-present)
-                <ul>
-                    <li>Developing and applying deep learning techniques in medical imaging</li>
-                    <li>Leading projects on generative modeling, CT radiomics, and MRI super-resolution</li>
-                    <li>Exploring quantum-inspired machine learning algorithms and neural PDE solvers</li>
-                    <li>Supervising MSc and PhD research projects, and teaching at summer schools</li>
-                </ul>
-            </li>
-            <li><strong>Research Assistant, Computational Physics for Engineering Materials, ETH Zurich</strong> (2015-2019)
-                <ul>
-                    <li>Developed fluid structure interaction models with lattice Boltzmann methods</li>
-                    <li>Researched Dirac fermions and topological matter</li>
-                    <li>Teaching assistant in Python programming and computational methods</li>
-                </ul>
-            </li>
-            <li><strong>Research Assistant, Institute of Astronomy, ETH Zurich</strong> (2014-2015)
-                <ul>
-                    <li>Part of the MUSE project at the Very Large Telescope (VLT)</li>
-                    <li>Developed algorithms for data reduction and analysis</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h2 id="publications">Publications</h2>
-        <ul>
-            <li>
-                <a href="https://arxiv.org/abs/2511.00011"><strong>Generative human motion mimicking through feature extraction in denoising diffusion settings</strong></a><br>
-                A. Okupnik, J. Schneider, K. Flouris<br>
-                <em>arXiv preprint arXiv:2511.00011</em>, 2025
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{okupnik2025generative,
-  title={Generative human motion mimicking through feature extraction in denoising diffusion settings},
-  author={Okupnik, Anna and Schneider, Jonas and Flouris, Kyriakos},
-  journal={arXiv preprint arXiv:2511.00011},
-  year={2025}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2510.15101"><strong>Operator Flow Matching for Timeseries Forecasting</strong></a><br>
-                Y.Y.R. Lee, K. Flouris<br>
-                <em>arXiv preprint arXiv:2510.15101</em>, 2025
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{lee2025operator,
-  title={Operator Flow Matching for Timeseries Forecasting},
-  author={Lee, Yolanne Yi Ran and Flouris, Kyriakos},
-  journal={arXiv preprint arXiv:2510.15101},
-  year={2025}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2509.25206"><strong>Hyperbolic Optimization</strong></a><br>
-                Y. Wang, K. Flouris<br>
-                <em>arXiv preprint arXiv:2509.25206</em>, 2025
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{wang2025hyperbolic,
-  title={Hyperbolic Optimization},
-  author={Wang, Yanke and Flouris, Kyriakos},
-  journal={arXiv preprint arXiv:2509.25206},
-  year={2025}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2507.13789"><strong>Localized FNO for Spatiotemporal Hemodynamic Upsampling in Aneurysm MRI</strong></a><br>
-                K. Flouris, M. Halter, Y.Y.R. Lee, S. Castonguay, L. Jacobs, P. Dirix, J. Nestmann, S. Kozerke, E. Konukoglu<br>
-                <em>MICCAI Workshop on Machine Learning in Medical Imaging</em>, 2025
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@inproceedings{flouris2025localized,
-  title={Localized FNO for Spatiotemporal Hemodynamic Upsampling in Aneurysm MRI},
-  author={Flouris, Kyriakos and Halter, Moritz and Lee, Yolanne Yi Ran and Castonguay, Samuel and Jacobs, Luuk and Dirix, Pietro and Nestmann, Jonathan and Kozerke, Sebastian and Konukoglu, Ender},
-  booktitle={International Workshop on Machine Learning in Medical Imaging},
-  year={2025}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2406.17441"><strong>A Matrix Product State Model for Simultaneous Classification and Generation</strong></a><br>
-                A. Mossi, B. Žunkovič, K. Flouris<br>
-                <em>Quantum Machine Intelligence</em>, 7(1):48, 2025
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{mossi2025matrix,
-  title={A Matrix Product State Model for Simultaneous Classification and Generation},
-  author={Mossi, Alex and {\v{Z}}unkovi{\v{c}}, Bojan and Flouris, Kyriakos},
-  journal={Quantum Machine Intelligence},
-  volume={7},
-  number={1},
-  pages={48},
-  year={2025},
-  publisher={Springer}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_56.pdf"><strong>Explicit and data-Efficient Encoding via Gradient Flow</strong></a><br>
-                K. Flouris, A. Volokitin, G. Bredell, E. Konukoglu<br>
-                <em>NeurIPS Workshop on Machine Learning and the Physical Sciences (ML4PS)</em>, 2024
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@inproceedings{flouris2024explicit,
-  title={Explicit and data-Efficient Encoding via Gradient Flow},
-  author={Flouris, Kyriakos and Volokitin, Anna and Bredell, Gustav and Konukoglu, Ender},
-  booktitle={NeurIPS 2024 Workshop on Machine Learning and the Physical Sciences},
-  year={2024}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2412.00511"><strong>Energy-Based Prior Latent Space Diffusion Model for Reconstruction of Lumbar Vertebrae from Thick Slice MRI</strong></a><br>
-                Y. Wang, Y.Y.R. Lee, A. Dolfini, M. Reischl, E. Konukoglu, K. Flouris<br>
-                <em>MICCAI Workshop on Deep Generative Models</em>, 2024
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@inproceedings{wang2024energy,
-  title={Energy-Based Prior Latent Space Diffusion Model for Reconstruction of Lumbar Vertebrae from Thick Slice MRI},
-  author={Wang, Yanke and Lee, Yolanne Yi Ran and Dolfini, Aurelio and Reischl, Markus and Konukoglu, Ender and Flouris, Kyriakos},
-  booktitle={MICCAI Workshop on Deep Generative Models},
-  year={2024},
-  publisher={Springer}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arodes.hes-so.ch/record/15810/files/Muller_2024_Comparing_stability_and_discriminatory_power.pdf"><strong>Comparing stability and discriminatory power of hand-crafted versus deep radiomics: a 3D-printed anthropomorphic phantom study</strong></a><br>
-                O. Jimenez-del-Toro, C. Aberle, R. Schaer, M. Bach, K. Flouris, E. Konukoglu, et al.<br>
-                <em>12th European Workshop on Visual Information Processing (EUVIP)</em>, 2024
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@inproceedings{jimenez2024comparing,
-  title={Comparing stability and discriminatory power of hand-crafted versus deep radiomics: a 3D-printed anthropomorphic phantom study},
-  author={Jimenez-del-Toro, Oscar and Aberle, Christoph and Schaer, Roger and Bach, Michael and Flouris, Kyriakos and Konukoglu, Ender and others},
-  booktitle={2024 12th European Workshop on Visual Information Processing (EUVIP)},
-  pages={1--5},
-  year={2024},
-  organization={IEEE}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2310.12743"><strong>Canonical Normalizing Flows for Manifold Learning</strong></a><br>
-                K. Flouris, E. Konukoglu<br>
-                <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 36, 2023
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@inproceedings{flouris2023canonical,
-  title={Canonical normalizing flows for manifold learning},
-  author={Flouris, Kyriakos and Konukoglu, Ender},
-  booktitle={Advances in Neural Information Processing Systems},
-  volume={36},
-  pages={27294--27314},
-  year={2023}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://arxiv.org/abs/2304.05939"><strong>Explicitly minimizing the blur error of variational autoencoders</strong></a><br>
-                G. Bredell, K. Flouris, K. Chaitanya, E. Erdil, E. Konukoglu<br>
-                <em>International Conference on Learning Representations (ICLR)</em>, 2023
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@inproceedings{bredell2023explicitly,
-  title={Explicitly minimizing the blur error of variational autoencoders},
-  author={Bredell, Gustav and Flouris, Kyriakos and Chaitanya, Krishna and Erdil, Ertunc and Konukoglu, Ender},
-  booktitle={International Conference on Learning Representations},
-  year={2023}
-}</pre>
-                </details>
-            </li>
-
-             <li>
-                <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.16373"><strong>3D-printed iodine-ink CT phantom for radiomics feature extraction: Advantages and challenges</strong></a><br>
-                M. Bach, C. Aberle, A. Depeursinge, O. Jimenez-del-Toro, R. Schaer, K. Flouris, et al.<br>
-                <em>Medical Physics</em>, 50(9):5682-5697, 2023
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{bach20233d,
-  title={3D-printed iodine-ink CT phantom for radiomics feature extraction-advantages and challenges},
-  author={Bach, Michael and Aberle, Christoph and Depeursinge, Adrien and Jimenez-del-Toro, Oscar and Schaer, Roger and Flouris, Kyriakos and others},
-  journal={Medical Physics},
-  volume={50},
-  number={9},
-  pages={5682--5697},
-  year={2023},
-  publisher={Wiley Online Library}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://doi.org/10.1103/PhysRevB.105.235122"><strong>Curvature-induced quantum spin-Hall effect on a Möbius strip</strong></a><br>
-                K. Flouris, M. Mendoza Jimenez, H.J. Herrmann<br>
-                <em>Physical Review B</em>, 105(23):235122, 2022
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{flouris2022curvature,
-  title={Curvature-induced quantum spin-Hall effect on a M{\"o}bius strip},
-  author={Flouris, Kyriakos and Jimenez, Miller Mendoza and Herrmann, Hans J},
-  journal={Physical Review B},
-  volume={105},
-  number={23},
-  pages={235122},
-  year={2022},
-  publisher={APS}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://www.nature.com/articles/s41598-022-08301-1"><strong>Assessing radiomics feature stability with simulated CT acquisitions</strong></a><br>
-                K. Flouris, O. Jimenez-del-Toro, C. Aberle, M. Bach, R. Schaer, M.M. Obmann, et al.<br>
-                <em>Scientific Reports</em>, 12(1):4732, 2022
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{flouris2022assessing,
-  title={Assessing radiomics feature stability with simulated CT acquisitions},
-  author={Flouris, Kyriakos and Jimenez-del-Toro, Oscar and Aberle, Christoph and Bach, Michael and Schaer, Roger and Obmann, Markus M and others},
-  journal={Scientific Reports},
-  volume={12},
-  number={1},
-  pages={4732},
-  year={2022},
-  publisher={Nature Publishing Group}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://academic.oup.com/mnras/article/491/3/4089/5626364"><strong>The MUSE Atlas of Discs (MAD): Ionized gas kinematic maps and an application to diffuse ionized gas</strong></a><br>
-                M. den Brok, C.M. Carollo, S. Erroz-Ferrer, M. Fagioli, J. Brinchmann, E. Emsellem, D. Krajnović, R.A. Marino, M. Onodera, S. Tacchella, K. Flouris, et al.<br>
-                <em>Monthly Notices of the Royal Astronomical Society</em>, 491(3):4089-4107, 2020
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{den2020muse,
-  title={The MUSE Atlas of Discs (MAD): Ionized gas kinematic maps and an application to diffuse ionized gas},
-  author={den Brok, Mark and Carollo, C Marcella and Erroz-Ferrer, Santiago and Fagioli, Martina and Brinchmann, Jarle and Emsellem, Eric and Krajnovi{\'c}, Davor and Marino, Raffaella A and Onodera, Masato and Tacchella, Sandro and Flouris, Kyriakos and others},
-  journal={Monthly Notices of the Royal Astronomical Society},
-  volume={491},
-  number={3},
-  pages={4089--4107},
-  year={2020},
-  publisher={Oxford University Press}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://www.mdpi.com/2410-3896/4/2/39"><strong>Quantized alternate current on curved graphene</strong></a><br>
-                K. Flouris, S. Succi, H.J. Herrmann<br>
-                <em>Condensed Matter</em>, 4(2):39, 2019
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{flouris2019quantized,
-  title={Quantized alternate current on curved graphene},
-  author={Flouris, Kyriakos and Succi, Sauro and Herrmann, Hans J},
-  journal={Condensed Matter},
-  volume={4},
-  number={2},
-  pages={39},
-  year={2019},
-  publisher={MDPI}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://doi.org/10.1142/S0129183119410067"><strong>Landau levels in wrinkled and rippled graphene sheets</strong></a><br>
-                K. Flouris, M. Mendoza Jimenez, H.J. Herrmann<br>
-                <em>International Journal of Modern Physics C</em>, 30(10):1941006, 2019
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{flouris2019landau,
-  title={Landau levels in wrinkled and rippled graphene sheets},
-  author={Flouris, Kyriakos and Jimenez, Miller Mendoza and Herrmann, Hans J},
-  journal={International Journal of Modern Physics C},
-  volume={30},
-  number={10},
-  pages={1941006},
-  year={2019},
-  publisher={World Scientific}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.98.155419"><strong>Confining massless Dirac particles in two-dimensional curved space</strong></a><br>
-                K. Flouris, M. Mendoza Jimenez, J.D. Debus, H.J. Herrmann<br>
-                <em>Physical Review B</em>, 98(15):155419, 2018
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{flouris2018confining,
-  title={Confining massless Dirac particles in two-dimensional curved space},
-  author={Flouris, Kyriakos and Jimenez, Miller Mendoza and Debus, Jens-Daniel and Herrmann, Hans J},
-  journal={Physical Review B},
-  volume={98},
-  number={15},
-  pages={155419},
-  year={2018},
-  publisher={APS}
-}</pre>
-                </details>
-            </li>
-
-            <li>
-                <a href="https://doi.org/10.1016/j.compfluid.2018.03.044"><strong>Fluid structure interaction with curved space lattice Boltzmann</strong></a><br>
-                K. Flouris, M. Mendoza Jimenez, G. Munglani, F.K. Wittel, J.D. Debus, H.J. Herrmann<br>
-                <em>Computers & Fluids</em>, 168:32-45, 2018
-                <details>
-                    <summary>BibTeX</summary>
-<pre>@article{flouris2018fluid,
-  title={Fluid structure interaction with curved space lattice Boltzmann},
-  author={Flouris, Kyriakos and Jimenez, Miller Mendoza and Munglani, Gautam and Wittel, Falk K and Debus, Jens-Daniel and Herrmann, Hans J},
-  journal={Computers \& Fluids},
-  volume={168},
-  pages={32--45},
-  year={2018},
-  publisher={Elsevier}
-}</pre>
-                </details>
-            </li>
-        </ul>
-
-        <h2 id="skills">Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Python, C++, MATLAB, Mathematica, LaTeX, Unix, GitHub</li>
-            <li><strong>Tools and Frameworks:</strong> PyTorch, Deep Learning, Generative Modeling, Lattice Boltzmann Methods</li>
-            <li><strong>Research Skills:</strong> Data Acquisition and Analysis, Theoretical Research, Teaching</li>
-        </ul>
-
-        <h2 id="awards">Awards and Honors</h2>
-        <ul>
-            <li>Top Reviewer Neurips 2025</li>
-            <li>Master of Science, First Class Grade, University of Cambridge</li>
-            <li>PHRT Funding, ETH Zurich - Radiomics and DeepFlow Projects</li>
-            <li>Highest International Mark in Physics (GCE A-Level), Edexcel</li>
-        </ul>
-
-        <h2 id="interests">Personal Interests</h2>
-        <ul>
-            <li>AI and Numerics</li>
-            <li>Theoretical Physics</li>
-            <li>Skiing and Mountain Biking</li>
-            <li>Design and Technology</li>
-            <li>Football and Running</li>
-        </ul>
-
-        <img src="images/manifold_and_density.png" alt="Profile Image of Manifold and Density Plot" style="width:100%; max-width:600px; display:block; margin:auto; border-radius: 4px; margin-top: 20px;"/>
-
-        <p style="text-align: center; margin-top: 30px;">Thank you for visiting!</p>
-        <p style="text-align: center; font-weight: bold; font-size: 1.2em;">Kyriakos Flouris</p>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="name">Kyriakos Flouris</div>
+    <div class="title">Junior Group Leader for<br>Biomedical Machine Learning</div>
+    <div class="affil">
+      <span>MRC Biostatistics Unit</span>
+      <span>University of Cambridge</span>
     </div>
-    <footer>
-        <p>&copy; 2024 Kyriakos Flouris. All Rights Reserved.</p>
-        <div>
-            <a href="https://www.linkedin.com/in/kyriakosflouris123/">LinkedIn</a>
-            <a href="mailto:kf318@cam.ac.uk">Email</a>
-        </div>
-    </footer>
+    <div class="sidebar-links">
+      <a href="mailto:kf318@cam.ac.uk">✉ kf318@cam.ac.uk</a>
+      <a href="https://www.linkedin.com/in/kyriakosflouris123/" target="_blank">LinkedIn</a>
+      <a href="https://k-flouris.github.io/" target="_blank">Website</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h1>About Me</h1>
+      <p>I am a Junior Group Leader for Biomedical Machine Learning at the <a href="https://www.mrc-bsu.cam.ac.uk/">MRC Biostatistics Unit, University of Cambridge</a>. My research sits at the intersection of artificial intelligence, biostatistics, medical imaging, and theoretical physics. I develop novel generative models, explore spatio-temporal dynamics for forecasting, and apply geometric and mathematical principles to build robust AI systems for biomedical science.</p>
+      <p>Previously, I was a Research Scientist at the <a href="https://www.cvl.ethz.ch/">Computer Vision Lab, ETH Zurich</a>, where I led projects on generative modelling, CT radiomics, MRI super-resolution, and quantum machine learning. I completed my PhD at ETH Zurich on fluid and quantum solvers in curved and topological manifolds, and my undergraduate and master's degrees in Physics at the University of Cambridge.</p>
+
+      <h2 id="research">Research Interests</h2>
+      <ul>
+        <li>Spatio-temporal dynamics and forecasting</li>
+        <li>Medical imaging (Computed Tomography, Radiomics, Super-Resolution)</li>
+        <li>Biostatistics (Genomics, Epidemiology)</li>
+        <li>Generative modelling and AI (Gradient flows, Normalizing Flows, VAEs, Diffusion Models)</li>
+        <li>Differential geometry and theoretical physics</li>
+        <li>Fluid–structure interaction and Lattice Boltzmann methods</li>
+        <li>Quantum machine learning</li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="year-label">2025</div>
+      <ul>
+        <li>
+          <a href="https://arxiv.org/abs/2511.00011"><strong>Generative human motion mimicking through feature extraction in denoising diffusion settings</strong></a><br>
+          <span class="pub-authors">A. Okupnik, J. Schneider, K. Flouris</span><br>
+          <span class="pub-venue">arXiv preprint arXiv:2511.00011, 2025</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2510.15101"><strong>Operator Flow Matching for Timeseries Forecasting</strong></a><br>
+          <span class="pub-authors">Y.Y.R. Lee, K. Flouris</span><br>
+          <span class="pub-venue">arXiv preprint arXiv:2510.15101, 2025</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2509.25206"><strong>Hyperbolic Optimization</strong></a><br>
+          <span class="pub-authors">Y. Wang, K. Flouris</span><br>
+          <span class="pub-venue">arXiv preprint arXiv:2509.25206, 2025</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2507.13789"><strong>Localized FNO for Spatiotemporal Hemodynamic Upsampling in Aneurysm MRI</strong></a><br>
+          <span class="pub-authors">K. Flouris, M. Halter, Y.Y.R. Lee, S. Castonguay, L. Jacobs, P. Dirix, J. Nestmann, S. Kozerke, E. Konukoglu</span><br>
+          <span class="pub-venue">MICCAI Workshop on Machine Learning in Medical Imaging, 2025</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2406.17441"><strong>A Matrix Product State Model for Simultaneous Classification and Generation</strong></a><br>
+          <span class="pub-authors">A. Mossi, B. Žunkovič, K. Flouris</span><br>
+          <span class="pub-venue">Quantum Machine Intelligence, 7(1):48, 2025</span>
+        </li>
+      </ul>
+
+      <div class="year-label">2024</div>
+      <ul>
+        <li>
+          <a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_56.pdf"><strong>Explicit and data-Efficient Encoding via Gradient Flow</strong></a><br>
+          <span class="pub-authors">K. Flouris, A. Volokitin, G. Bredell, E. Konukoglu</span><br>
+          <span class="pub-venue">NeurIPS Workshop on Machine Learning and the Physical Sciences (ML4PS), 2024</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2412.00511"><strong>Energy-Based Prior Latent Space Diffusion Model for Reconstruction of Lumbar Vertebrae from Thick Slice MRI</strong></a><br>
+          <span class="pub-authors">Y. Wang, Y.Y.R. Lee, A. Dolfini, M. Reischl, E. Konukoglu, K. Flouris</span><br>
+          <span class="pub-venue">MICCAI Workshop on Deep Generative Models (DGM4MICCAI, Long oral), 2024</span>
+        </li>
+        <li>
+          <a href="https://arodes.hes-so.ch/record/15810/files/Muller_2024_Comparing_stability_and_discriminatory_power.pdf"><strong>Comparing stability and discriminatory power of hand-crafted versus deep radiomics: a 3D-printed anthropomorphic phantom study</strong></a><br>
+          <span class="pub-authors">O. Jimenez-del-Toro, C. Aberle, R. Schaer, M. Bach, K. Flouris, E. Konukoglu, et al.</span><br>
+          <span class="pub-venue">12th European Workshop on Visual Information Processing (EUVIP), 2024</span>
+        </li>
+      </ul>
+
+      <div class="year-label">2023</div>
+      <ul>
+        <li>
+          <a href="https://arxiv.org/abs/2310.12743"><strong>Canonical Normalizing Flows for Manifold Learning</strong></a><br>
+          <span class="pub-authors">K. Flouris, E. Konukoglu</span><br>
+          <span class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS), 36, 2023</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2304.05939"><strong>Explicitly minimizing the blur error of variational autoencoders</strong></a><br>
+          <span class="pub-authors">G. Bredell, K. Flouris, K. Chaitanya, E. Erdil, E. Konukoglu</span><br>
+          <span class="pub-venue">International Conference on Learning Representations (ICLR), 2023</span>
+        </li>
+        <li>
+          <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.16373"><strong>3D-printed iodine-ink CT phantom for radiomics feature extraction: advantages and challenges</strong></a><br>
+          <span class="pub-authors">M. Bach, C. Aberle, A. Depeursinge, O. Jimenez-del-Toro, R. Schaer, K. Flouris, et al.</span><br>
+          <span class="pub-venue">Medical Physics, 50(9):5682–5697, 2023</span>
+        </li>
+      </ul>
+
+      <div class="year-label">2022</div>
+      <ul>
+        <li>
+          <a href="https://doi.org/10.1103/PhysRevB.105.235122"><strong>Curvature-induced quantum spin-Hall effect on a Möbius strip</strong></a><br>
+          <span class="pub-authors">K. Flouris, M. Mendoza Jimenez, H.J. Herrmann</span><br>
+          <span class="pub-venue">Physical Review B, 105(23):235122, 2022</span>
+        </li>
+        <li>
+          <a href="https://www.nature.com/articles/s41598-022-08301-1"><strong>Assessing radiomics feature stability with simulated CT acquisitions</strong></a><br>
+          <span class="pub-authors">K. Flouris, O. Jimenez-del-Toro, C. Aberle, M. Bach, R. Schaer, M.M. Obmann, et al.</span><br>
+          <span class="pub-venue">Scientific Reports, 12(1):4732, 2022</span>
+        </li>
+      </ul>
+
+      <div class="year-label">2020</div>
+      <ul>
+        <li>
+          <a href="https://academic.oup.com/mnras/article/491/3/4089/5626364"><strong>The MUSE Atlas of Discs (MAD): Ionized gas kinematic maps and an application to diffuse ionized gas</strong></a><br>
+          <span class="pub-authors">M. den Brok, C.M. Carollo, S. Erroz-Ferrer, ..., K. Flouris, et al.</span><br>
+          <span class="pub-venue">Monthly Notices of the Royal Astronomical Society, 491(3):4089–4107, 2020</span>
+        </li>
+      </ul>
+
+      <div class="year-label">2019</div>
+      <ul>
+        <li>
+          <a href="https://www.mdpi.com/2410-3896/4/2/39"><strong>Quantized alternate current on curved graphene</strong></a><br>
+          <span class="pub-authors">K. Flouris, S. Succi, H.J. Herrmann</span><br>
+          <span class="pub-venue">Condensed Matter, 4(2):39, 2019</span>
+        </li>
+        <li>
+          <a href="https://doi.org/10.1142/S0129183119410067"><strong>Landau levels in wrinkled and rippled graphene sheets</strong></a><br>
+          <span class="pub-authors">K. Flouris, M. Mendoza Jimenez, H.J. Herrmann</span><br>
+          <span class="pub-venue">International Journal of Modern Physics C, 30(10):1941006, 2019</span>
+        </li>
+      </ul>
+
+      <div class="year-label">2018</div>
+      <ul>
+        <li>
+          <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.98.155419"><strong>Confining massless Dirac particles in two-dimensional curved space</strong></a><br>
+          <span class="pub-authors">K. Flouris, M. Mendoza Jimenez, J.D. Debus, H.J. Herrmann</span><br>
+          <span class="pub-venue">Physical Review B, 98(15):155419, 2018</span>
+        </li>
+        <li>
+          <a href="https://doi.org/10.1016/j.compfluid.2018.03.044"><strong>Fluid structure interaction with curved space lattice Boltzmann</strong></a><br>
+          <span class="pub-authors">K. Flouris, M. Mendoza Jimenez, G. Munglani, F.K. Wittel, J.D. Debus, H.J. Herrmann</span><br>
+          <span class="pub-venue">Computers &amp; Fluids, 168:32–45, 2018</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TALKS -->
+    <section id="talks">
+      <h2>Invited Talks &amp; Presentations</h2>
+
+      <div class="year-label">2024</div>
+      <ul>
+        <li>
+          <span class="tag tag-talk">Talk</span>
+          <strong>Structured Machine Learning and Time-Stepping for Dynamical Systems</strong> —
+          <em>Banff International Research Station</em>, Banff, Canada (February 2024).
+          Presented machine learning techniques and their application in 4D MRI flow solvers.
+        </li>
+        <li>
+          <span class="tag tag-talk">Talk</span>
+          <strong>Topological Condensed Matter Physics</strong> —
+          <em>APS March Meeting</em>, Minneapolis, MN, USA (March 2024).
+        </li>
+      </ul>
+
+      <div class="year-label">2023</div>
+      <ul>
+        <li>
+          <span class="tag tag-talk">Talk</span>
+          <strong>Prospects of Quantum Machine Intelligence</strong> —
+          <em>Quantum Many-Body Systems Workshop, Freie Universität Berlin</em>, Germany (July 2023).
+        </li>
+      </ul>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <h2>Teaching &amp; Supervision</h2>
+
+      <h3>Courses — University of Cambridge</h3>
+      <ul>
+        <li>
+          <span class="tag tag-course">Course</span>
+          <strong>Introduction to Machine Learning</strong> — MPhil in Population Health, Lent Term 2026.
+        </li>
+        <li>
+          <span class="tag tag-course">Course</span>
+          <strong>Applied Machine Learning</strong> — MPhil in Population Health, Easter Term 2026.
+        </li>
+      </ul>
+
+      <h3>Supervision — University of Cambridge</h3>
+      <ul>
+        <li>
+          <span class="tag tag-supervision">Supervision</span>
+          <strong>Natural Sciences Tripos Physics Part I</strong> — undergraduate supervisions, University of Cambridge.
+        </li>
+        <li>
+          <span class="tag tag-supervision">Supervision</span>
+          <strong>Natural Sciences Tripos Physics Part II</strong> — undergraduate supervisions, University of Cambridge.
+        </li>
+      </ul>
+
+      <h3>Courses &amp; Lectures — ETH Zurich</h3>
+      <ul>
+        <li>
+          <span class="tag tag-lecture">Lecture</span>
+          <strong>Image Processing for Physical Scientists</strong> (Machine Learning) — EXCITE Summer School, ETH Zurich. Created and delivered lectures; supervised student workshops on ML applications.
+        </li>
+        <li>
+          <span class="tag tag-lecture">Lecture</span>
+          <strong>Medical Imaging</strong> — Lecturer, examiner, and teaching assistant; assisted in setting and correcting exams.
+        </li>
+        <li>
+          <span class="tag tag-lecture">TA</span>
+          <strong>Physics I &amp; II</strong>, <strong>High Performance Computing</strong>, <strong>Python Programming</strong>, <strong>Computational Methods in Physics</strong> — Teaching assistant, ETH Zurich.
+        </li>
+      </ul>
+
+      <h3>MSc &amp; Semester Project Supervision — ETH Zurich</h3>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:8px;">Supervised over 20 students across multiple departments on topics including:</p>
+      <ul>
+        <li>Novel generative modelling methods (Diffusion, Neural ODE)</li>
+        <li>Analysis and experimentation on generative and other models</li>
+        <li>Modern medical image reconstruction (segmentation, synthesis)</li>
+        <li>Quantum machine learning and computational physics</li>
+      </ul>
+
+      <h3>Conference &amp; Workshop Organisation</h3>
+      <ul>
+        <li>
+          <span class="tag tag-talk">Org</span>
+          <strong>MIDL 2022</strong> — Medical Imaging with Deep Learning, Zurich, Switzerland.
+        </li>
+        <li>
+          <span class="tag tag-talk">Org</span>
+          <strong>EXCITE Summer School</strong> — Zurich, Switzerland (recurring).
+        </li>
+      </ul>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <h2>Awards &amp; Honours</h2>
+      <ul>
+        <li><strong>Top Reviewer</strong> — NeurIPS 2025.</li>
+        <li><strong>First Class (Part III)</strong> — MSc Natural Sciences Tripos, University of Cambridge, 2014. Downing College Scholarship awarded for first class degree result.</li>
+        <li><strong>PHRT Funding</strong> — ETH Zurich; Radiomics and DeepFlow Projects, 2019–present.</li>
+        <li><strong>ERC &amp; SNSF Funding</strong> — ETH Zurich; Fluid Dynamics and Quantum Condensed Matter, 2015–2019.</li>
+        <li><strong>GCE A-Level Highest International Mark in Physics</strong> — Edexcel, 2008.</li>
+        <li><strong>IGCSE Highest International Mark in Physics</strong> — Edexcel, 2006.</li>
+        <li><strong>Bronze Medal</strong> — Mathematics Kangourou Cyprus, 2006.</li>
+        <li><strong>Gold Medal</strong> — 2nd Annual Mathematics Olympiad, Cyprus, 2001.</li>
+        <li><strong>Annual School Prizes for Outstanding Academic Achievement</strong> — The English School, Nicosia, 2005–2008.</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer style="text-align:center; padding:28px; font-size:13px; color:#888; border-top:1px solid var(--border); background:var(--white); margin-top:20px;">
+  © 2025 Kyriakos Flouris &nbsp;·&nbsp;
+  <a href="mailto:kf318@cam.ac.uk">kf318@cam.ac.uk</a> &nbsp;·&nbsp;
+  MRC Biostatistics Unit, University of Cambridge
+</footer>
+
 </body>
 </html>
