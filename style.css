@@ -129,7 +129,7 @@ a:hover { text-decoration: underline; color: var(--link-hover); }
   font-size: 13px;
 }
 .author__urls li {
-  padding: 3px 0;
+  padding: 4px 0;
   border-bottom: 1px solid var(--border);
   color: var(--accent);
   font-size: 12.5px;
@@ -137,6 +137,27 @@ a:hover { text-decoration: underline; color: var(--link-hover); }
 .author__urls li:last-child { border-bottom: none; }
 .author__urls li a { color: var(--link); }
 .author__urls li a:hover { color: var(--link-hover); }
+
+/* icon rows: text left, icon right */
+li.sidebar-icon-row {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+li.sidebar-icon-row span,
+li.sidebar-icon-row a { flex: 1; }
+.crest-icon {
+  height: 1.25em;
+  width: auto;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.sidebar-fa-icon {
+  font-size: 1em;
+  color: var(--accent);
+  flex-shrink: 0;
+}
 
 /* ── MAIN CONTENT ── */
 .page__content {
