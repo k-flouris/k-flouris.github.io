@@ -1,0 +1,12 @@
+{%- assign items = "about:index.html:About,publications:publications.html:Publications,talks:talks.html:Talks,teaching:teaching.html:Teaching,awards:awards.html:Awards" | split: "," -%}
+<div class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__title" href="index.html">Kyriakos Flouris</a>
+    <ul class="greedy-nav">
+      {%- for item in items %}
+      {%- assign p = item | split: ":" %}
+      <li><a href="{{ p[1] }}"{% if page.nav == p[0] %} class="active"{% endif %}>{{ p[2] }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</div>
