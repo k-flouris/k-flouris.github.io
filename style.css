@@ -259,8 +259,23 @@ footer.page-footer a { color: #ccc; }
 @media (max-width: 640px) {
   .page-wrapper { flex-direction: column; }
   .sidebar { position: static; width: 100%; }
-  .sidebar__author-profile { display: flex; align-items: center; gap: 16px; text-align: left; }
-  .sidebar__author-profile img { width: 70px; height: 70px; margin: 0; }
+  .sidebar__author-profile { display: grid; grid-template-columns: 70px 1fr; column-gap: 16px; align-items: center; text-align: left; }
+  .sidebar__author-profile img { width: 70px; height: 70px; margin: 0; grid-row: span 2; }
+  .author__name { align-self: end; }
+  .author__bio { align-self: start; margin-bottom: 0; }
+  .author__urls-wrapper { grid-column: 1 / -1; }
+  .author__urls { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .author__urls li { border-bottom: none; padding: 2px 0; }
   .masthead__inner { flex-wrap: wrap; height: auto; padding: 10px 16px; }
   .greedy-nav { gap: 0; }
 }
+
+/* discreet professional-development list */
+.page__content ul.cpd-list li { font-size: 13.5px; color: #666; margin-bottom: 4px; }
+
+/* news */
+.page__content ul.news-list { list-style: none; padding-left: 0; }
+.page__content ul.news-list li { display: flex; gap: 14px; font-size: 14.5px; margin-bottom: 6px; }
+.news-date { flex: 0 0 72px; color: var(--accent); font-size: 13px; padding-top: 1px; }
+.page__content a { text-decoration: underline; text-decoration-color: #bbb; text-underline-offset: 2px; }
+.page__content .entry-list a { text-decoration: none; }
